@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Divar by Bootstrap</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
+		
+		<meta charset="UTF-8">
+
+		<style type="text/css">
+			
+		/*	<!--
+			@font-face {
+				font-family: "Amiri";
+				src: url(Amiri-Regular.ttf);
+			}
+			-->		*/
+			
+			body {
+			    min-width: 320px;
+				background: #FFF;
+				font-family: "Amiri",Arial,Helvetica,sans-serif;
+				font-size: 14px;
+				line-height: 1.4285em;
+				color: rgba(0,0,0,.87);
+			}
+			
+			.clear {
+				clear: both;
+				color: red;
+			}
+			
+			.go-right {
+				float: right;
+				text-align: right;
+				direction: ltr;
+			}
+			
+		/*	<!-- 
+			begining of head
+			--> */
+			
+			
+			#navbar {
+				color: black;
+				position: fixed;
+				top: 0px;
+				width : 100%;
+				height : 65px;
+				font-weight: bold;
+				margin: 0px 0px 10px 0px;
+				border-bottom: 2px solid #F7F7F7;
+				background-color: white;
+				z-index:99;
+			}
+			
+			nav a {
+				color: black;
+			}
+			
+			.nav-section {
+				margin-leff: 12px;
+				margin-right: 20px;
+				cursor:pointer;
+			}
+			
+			.nav-section:hover{
+				color: gray;
+			}
+			
+			#nav-free-ad{
+				background-color: #C00C1A;
+				border-radius: 3px;
+				float: left;
+				width: 150px;
+				height: 40px;
+				margin: 12px 20px 12px 20px;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			#nav-free-ad:hover{
+				background-color: #CC3C47;
+			}
+
+			#right-of-nav {
+				direction: rtl;
+			}
+			
+			#logo {
+				float: right;
+				width: 60px;
+				margin: 12px 40px 20px 30px;
+			}
+			
+			#city-selection {
+				margin: 18px 2px 2px 2px;
+				padding: 0px 12px 0px 12px;
+			}
+		/*	<!--
+			end of head
+			--> */
+			
+			
+		/*	<!-- 
+			begining of right 
+			--> */
+			#right-section {
+				position: fixed;
+				right: 15px;
+				width: 180px;
+				margin-left: 15px;
+				margin-right: 20;
+				margin-top: 70px;
+				height: 100%;
+			}
+			
+			.right-menu {
+				text-align: right;
+				background-color: white;
+				padding: 12px 32px 12px 30px;
+				border-top: 1px solid #E1E1E2;
+				cursor: pointer;
+			}
+			
+			#all-ads {
+				text-align: right;
+				background-color: white;
+				padding: 12px 32px 12px 30px;
+				font-style : italic;
+				background-color: #F7F7F7;
+			}
+			
+			.right-menu:hover{
+				background-color: #F7F7F7;
+			}
+			
+			#all-ads img {
+				position: relative;
+				top: 0px;
+				width: 10px;
+			}
+			
+			#get-from-bazzar {
+				float: right;
+				padding: 6px 25px;
+			}
+		/*	<!-- 
+			end of right 
+			--> */
+
+			
+			
+		/*	<!-- 
+			begining of search-section 
+			--> */
+			#search-section {
+				xxxmargin: 70px 235px 10px 10px;
+				margin: 72px 180px 10px 10px;
+				float: right !important;
+				border: 1px solid #ECEEEF;
+				border-radius: 2.5px;
+				xxxwidth: 950px;
+				xxxxheight: 290px;
+				background-color: #FCFCFC;
+			}
+
+			
+			
+/* <!--		// Extra small devices (portrait phones, less than 576px) --> */
+			@media (max-width: 575.98px) {
+				#search-section {
+					xxxbackground-color: green !important;
+					margin-right: 5px;
+				}
+				
+				#right-section {
+					display: none;
+				}
+				
+				#devices-section div{
+					width: 400px !important;
+				}
+			}
+			
+/* <!--		// Small devices (landscape phones, 576px and up)	--> */
+			@media (min-width: 576px) and (max-width: 767.98px) {
+				#search-section {
+					xxxbackground-color: pink !important;
+					margin-right: 5px;
+				}
+				
+				#right-section {
+					display: none;
+				}
+				
+				#devices-section div{
+					width: 500px !important;
+				}
+			}
+
+/* <!--		// Medium devices (tablets, 768px and up)	-->	*/
+			@media (min-width: 768px) and (max-width: 991.98px) { 
+				#search-section {
+					xxxbackground-color: lightgreen !important;
+					margin-right: 5px;
+				}
+				
+				#right-section {
+					display: none;
+				}
+				
+				#devices-section div{
+					width: 331px !important;
+				}
+			}
+
+/* <!--		// Large devices (desktops, 992px and up)	-->	*/
+			@media (min-width: 992px) and (max-width: 1199.98px) {
+				#search-section {
+					xxxbackground-color: lightblue !important;
+				} 
+				
+				#devices-section {
+					margin: 10px 180px 10px 10px;
+				}
+			}
+				
+/* <!--		// Extra large devices (large desktops, 1200px and up)	--> */
+			@media (min-width: 1200px) { 
+				#search-section {
+					xxxbackground-color: blue !important;
+					width: 900px;
+				}
+				
+				#devices-section {
+					margin: 10px 180px 10px 10px;
+				}
+				
+				#devices-section div{
+					width: 292px !important;
+				}
+				
+				#ads-look {
+					right: -30px !important;
+					margin-bottom: 1px !important;
+				}
+			}
+			
+			.theInputs {
+				margin: 13px 11px 10px 10px;
+				padding: 10px 20px 10px 80px;
+				border: 1px solid #DEDEDE;
+				border-radius: 4px;
+				xxxxwidth: 220px;
+				min-width: 220px;
+				max-width: 300px;
+				text-align: right;
+				direction: rtl;
+				height: 40px;
+			}
+			
+			#neighborhood-selection {
+				direction: ltr;
+				padding-left: 90px;
+			}
+			
+			#search-section-price {
+				float: right;
+				margin: 18px 12px 10px 10px;
+				font-weight: bold;
+			}
+			
+			#search-section-price-kind {
+				float: right;
+				padding: 10px 30px 10px 10px;
+				border: 1px solid #DEDEDE;
+				border-radius: 4px;
+				margin: 10px 0px 5px 5px;
+				width: 210px;
+				xxxheight: 40px;
+			}
+			
+			.search-section-price-from-to {
+				float: right;
+				padding: 10px 30px 10px 10px;
+				border: 1px solid #DEDEDE;
+				border-radius: 4px;
+				margin: 5px 4px 5px 5px;
+				width: 102px;
+				text-align: right;
+			}
+			
+			#search-section-type {
+				float: right;
+				margin: 18px 12px 10px 10px;
+				font-weight: bold;
+			}
+			
+			.search-section-titles {
+				float: right;
+			}
+			
+			.search-section-type-selection {
+				float: right;
+			}			
+			
+			.search-section-checkboxes {
+				margin: 10px 10px 5px 5px;
+			}
+			
+			#search-button {
+				background-color: #C00C1A;
+				border-radius: 3px;
+				float: left;
+				width: 80px;
+				height: 40px;
+				margin: 12px 20px 12px 20px;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+				cursor:pointer;
+				font-weight: bold;
+				font-size: 14px;
+			}
+		/*	<!-- 
+			end of search-section 
+			--> */
+			
+			
+			#ads-look{
+				width: 70px;
+				position: relative;
+				right: -10px;
+				margin-bottom: 5px;
+			}
+			
+			
+		/*	<!-- 
+			begining of devices-section 
+			--> */			
+			#devices-section {
+				xxxxmargin: 10px 235px 10px 10px;
+				
+				float: right;
+				direction: rtl;
+				border-radius: 2.5px;
+				xxxwidth: 970px;
+				xxxheight: 700px;
+			}
+			
+			#devices-section * {
+				padding: 1px;
+			}
+			
+			#devices-section div{
+				float: right;
+				border: 1px solid #DEDEDE;
+				border-radius: 3px;
+				width: 305px;
+				height: 150px;
+				margin-left: 14px;
+				margin-bottom: 14px;
+			}
+			
+			#devices-section span{
+				float: right;
+				direction: rtl;
+			}
+
+			#devices-section img{
+				float: left;
+				height: 125px;
+				width: 125px;
+			
+			}
+			
+			#devices-section hr {
+				border-bottom : none;
+				border-left : none;
+				border-right: none;
+				border-top-color: #F7F7F7;
+				clear: both ; 
+				height: 0.01px"
+			}
+			
+			#devices-section toman {
+			}
+			
+			#devices-section .price-line {
+				position: relative;
+				top:-16px;
+			}
+			
+			#no-device-found {
+				display: none;
+				margin: 10px 235px 10px 10px;
+				float: right;
+				direction: rtl;
+				border: 1px solid #A18F70;
+				border-radius: 2.5px;
+				background-color: #FFFAF3;
+				color: #A18F70;
+				font-size: 15px;
+				background-size: 100%;
+				height: 45px;
+				width: 950px;
+			}
+			
+			#no-device-found p {
+				padding-right: 20px;
+			}
+			
+		/*	#de0, #de1, #de2 {
+				color: black;
+			}
+			
+			#de3, #de4, #de5 {
+				color: darkblue;
+			}
+			
+			#de1 {
+				color: black;
+			}
+		*/	
+		/*	<!-- 
+			end of devices-section 
+			--> */	
+			
+		</style>
+	</head>
+
+	<body>
+		
+		<nav class="navbar navbar-fixed-top navbar-expand-lg" id="navbar">
+			 <a href="https://www.google.com/"><div id="nav-free-ad">ارسال رایگان آگهی</div></a>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					
+					<li class="nav-item"> 
+						
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link nav-section" href="#">تماس با ما</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link nav-section" href="#">شرایط و راهنما</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link nav-section" href="#">بلاگ</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link nav-section" href="#">درباره ما</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link nav-section" href="#">چت</a>
+					</li>
+					
+					<li class="nav-item active">
+						<a class="nav-link nav-section" href="#">دیوار من <span class="sr-only">(current)</span></a>
+					</li>
+					
+				</ul>
+				
+				<div id="right-of-nav">
+					<a href="https://divar.ir"><img id="logo" src="divar_logo.png" /></a>
+					<select id="city-selection">
+						<option>اصفهان</option>
+						<option selected>تهران</option>
+						<option>ساری</option>
+						<option>شیراز</option>
+						<option>کیش</option>
+					</select>
+				</div>
+				
+			</div>
+		</nav>
+		
+		
+		
+		<div id="right-section">	
+
+			<div id="all-ads"><span>همه آگهی ها </span> <img src="arrow-icon.png" /> </div>
+			<div class="right-menu">لوازم الکترونیکی</div>
+			<div class="right-menu">موبایل و تبلت</div>
+			<div class="right-menu">رایانه</div>
+			<div class="right-menu">کنسول، بازی ویدئویی و آنلاین</div>
+			<div class="right-menu">صوتی و تصویری</div>
+			<div class="right-menu">تلفن رومیزی</div>
+			<a href="http://cafebazaar.ir/app/ir.divar/?l=fa"><img id="get-from-bazzar" src="get-from-bazzar.png" /></a>
+			
+		</div>
+		
+		
+		
+<div class="container  mr-auto">	
+	
+		<div id="search-section">
+			
+			<div class="go-right">
+				<input id="keyword" class="theInputs" type="text" placeholder="جست و جو در لوازم الکترونیکی">
+			</div>
+
+			<div class="go-right">
+				<select id="device-type-selection" class="theInputs">
+					<option selected value="all">لوازم الکترونیکی</option>
+					<option value = "mobileAndTablet">موبایل و تبلت</option>
+					<option value = "mobile">موبایل</option>
+					<option value = "tablet">تبلت</option>
+					<option value = "gamingTool">وسایل بازی</option>
+					<option value = "other">سایر لوازم</option>
+				</select>
+			</div>
+	
+			<div class="go-right">
+				<select id="neighborhood-selection" class="theInputs">
+					<option value="all" selected>همه محله ها</option>
+					<option value="punak">پونک</option>
+					<option value="shahran">شهران</option>
+					<option value="vanak">ونک</option>
+				</select>
+			</div>
+			
+			<div class="clear"></div>
+			
+			<div id="search-section-price">
+			
+				<span class="search-section-titles">:قیمت<br></span>
+				<div class="clear"></div>
+				<select id="search-section-price-kind" class="custom-select mr-sm-2">
+					<option id="priceIsFixed" value="priceIsFixed" class="go-right" selected>مقطوع - تومان </option>
+					<option id="priceIsFree" value="priceIsFree" class="go-right">مجانی</option>
+					<option id="priceIsNegotiable" value="priceIsNegotiable" class="go-right">توافقی</option>
+				</select>
+				<div class="clear"></div>
+				
+				<div>
+					<input class="search-section-price-from-to" type="text" id="price-from" placeholder="از">
+					<input class="search-section-price-from-to" type="text" id="price-to" placeholder="تا">
+				</div>
+				
+			</div>
+			
+			<div id="search-section-type" class="form-check">
+			
+				<span class="search-section-titles">:نوع<br></span>
+				<div class="clear"></div>
+				
+				<form id="kindOfDealForm">
+					<input class="search-section-type-selection form-check-input" type="radio" name="kindOfDeal" value="all">
+					<label   class="search-section-type-selection form-check-label">فرقی نمیکند</label><br>
+					
+					<input checked class="search-section-type-selection form-check-input" type="radio" name="kindOfDeal" value="forSale">
+					<label   class="search-section-type-selection form-check-label">فروشی</label><br>
+					
+					<input class="search-section-type-selection form-check-input" type="radio" name="kindOfDeal" value="toBuy">
+					<label   class="search-section-type-selection form-check-label">درخواستی</label> <br><br>
+				</form>
+				
+			</div>
+			
+			<div class="clear"></div>
+			<div class="search-section-checkboxes  go-right">
+				<span  class="go-right">عکس دار </span>
+				<input id="hasPicture" type="checkbox"> 
+			</div>
+			
+			<div class="search-section-checkboxes  go-right">
+				<span class="go-right">فوری</span>
+				<input id="isUrgent" type="checkbox"/> 
+			</div>
+			
+			<div >
+				<button id="search-button">جستجو</button>
+			</div>
+			<p id ="checkingThings"></p>		
+		</div>
+		
+</div>	
+		
+		
+		
+		
+
+		
+		<div class="container">
+			<img id="ads-look" src="ads-look.png" />
+		</div>
+		
+		<div class="container">	
+			<div id="devices-section">
+			</div>
+		<div class="container">	
+
+		<div id="no-device-found">
+			<p>در حال حاضر آگهی‌ای وجود ندارد</p>
+		</div>
+	
+<!--	
+		<button class="btn btn-primary" id="btnToggle" type="submit">Submit form</button>
+-->		
+		<script type="text/javascript">
+			
+			function createDevice(n = 12) {
+				for (var i=0; i<n; i++) {
+					$("#devices-section").append('<div class="go-right" id="de' +i+ '"><span id="span-de' +i+ '"></span><img id="img-d' +i+ 
+					'"/> <hr><price-line class="price-line">قیمت: <toman id="toman' +i+ '"></toman> تومان</price-line></div> ');
+				}
+				
+				$("#devices-section").append('<div id="de12"><span id="span-de12"> </span><img id="img-d12"/> <hr><price-line class="price-line">قیمت: مجانی<toman id="toman12"></toman> </price-line></div>');
+			}
+			
+			
+			function Device(name, price, kindOfDevice, kindOfDeal, isUrgent, picLocation, neighborhood) {
+				this.name = name;
+				this.price = price;
+				this.kindOfDevice = kindOfDevice;
+				this.kindOfDeal = kindOfDeal;
+				this.isUrgent = isUrgent;
+				this.picLocation = picLocation;
+				this.neighborhood = neighborhood;
+				
+				this.hasPicture = function() {
+					if (this.picLocation == "no-pic.png" || this.picLocation == "") {
+						return 0;
+					}
+					return 1;
+				};	
+				
+				this.bio = function() {
+					alert(this.name + ' is worth ' + this.price + '.');
+				};
+			}
+			
+			var d0 = new Device('speakers', 120, 'other', 'forSale', 0, 'd-speakers.jpg', 'shahran');
+			var d1 = new Device('apple ipad', 700, 'tablet', 'forSale', 0, 'd-apple-ipad.jpg', 'punak');
+			var d2 = new Device('xbox', 350, 'gamingTool', 'forSale', 1, 'd-xbox.jpg', 'vanak');
+			var d3 = new Device('motorola', -1, 'mobile', 'forSale', 1, 'd-motorola.jpg', 'vanak');
+			var d4 = new Device('Sony xz1', 900, 'mobile', 'forSale', 1, 'd-sony.jpg', 'shahran');
+			var d5 = new Device('htc 3d', 1300, 'mobile', 'forSale', 1, 'd-htc-3d.jpg', 'vanak');
+			var d6 = new Device('telephone', 60, 'other', 'forSale', 0, 'd-telephone.jpg', 'punak');
+			var d7 = new Device('ps4', 2450,'gamingTool', 'forSale', 1, 'd-ps4.jpg', 'vanak');
+			var d8 = new Device('galaxy tab', 550, 'tablet', 'forSale', 0, 'd-galaxy-tab.jpg', 'vanak');
+			var d9 = new Device('a tpLink modem', -1, 'other', 'toBuy', 0, 'd-modem.jpg', 'punak');
+			var d10 = new Device('need a big tablet ', -1, 'tablet', 'toBuy', 0, 'no-pic.png', 'shahran');
+			var d11 = new Device('quadcopter', 2000, 'gamingTool', 'toBuy', 1, 'no-pic.png', 'punak');
+			var d12 = new Device('impolite monkey', 0, 'other', 'forSale', 1, 'for-free.jpg', 'punak');
+			var d = [d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12]
+			
+			
+			function showNameAndNeighborhood(i) {
+				var span = "#span-de";
+				span += i;
+				
+				$(span).html(d[i].name + "</br></br></br></br>" + d[i].neighborhood);
+			}
+			
+			function showPrice(i) {
+				var priceId = "#toman"
+				priceId += i;
+				
+				if(d[i].price == -1){
+					$(priceId).html("توافقی ");
+					return;
+				}
+				
+				var price = ""
+				price += d[i].price;
+				
+				$(priceId).html(price.toPersianDigits());
+			}
+			
+			function showPicture(i) {
+				var picLocation = "#img-d";
+				picLocation = picLocation + i;
+				$(picLocation).attr('src', d[i].picLocation);
+			}
+			
+			$(document).ready(function () {
+				createDevice(12);
+				
+				for(var i in d) {
+					showNameAndNeighborhood(i);
+					showPrice(i);
+					showPicture(i);
+				}
+			});
+
+			String.prototype.toPersianDigits= function(){
+				var id= ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+				return this.replace(/[0-9]/g, function(w){
+					return id[+w]
+				});
+			}
+			
+			
+			$("#search-button").click(function() {
+				var totalAvailables = 0;
+				
+				for(var i in d) {
+					var onPage = 1;
+					onPage *= checkName(i);
+					onPage *= checkKindOfDevice(i);
+					onPage *= checkNeighborhood(i);
+					onPage *= checkPrice(i);
+					onPage *= checkKindOfDeal(i);
+					onPage *= checkHasPic(i);
+					onPage *= checkIsUrgent(i);
+
+					totalAvailables += onPage;
+					showWanted(onPage, i);
+				}
+				
+				errorCheck(totalAvailables);
+			});
+			
+			
+			function checkName(i) {
+				theInput = $("#keyword").val();
+				return d[i].name.includes(theInput);
+			}
+			
+			function checkKindOfDevice(i) {
+				if($("#device-type-selection").val() != "all") {
+
+					if($("#device-type-selection").val() == "mobileAndTablet") {
+						if (d[i].kindOfDevice == "mobile" || d[i].kindOfDevice == "tablet") {
+							return 1;
+						}
+					}
+
+					if(d[i].kindOfDevice != $("#device-type-selection").val()) {
+						return 0;
+					}	
+				}
+				return 1;
+			}
+			
+			function checkNeighborhood(i) {
+				if ($("#neighborhood-selection").val() != "all"){
+					if ($("#neighborhood-selection").val() != d[i].neighborhood){
+						return 0;
+					}
+				}
+				return 1;
+			}
+			
+			function checkPrice(i) {
+				var onPage = 1;
+				onPage *= whatKindOfPrice(i);
+				onPage *= fromWhatPrice(i);
+				onPage *= toWhatPrice(i);
+				return onPage;
+			}
+			
+			function whatKindOfPrice(i) {
+				var kindOfPrice = $("#search-section-price-kind").val();
+			
+				if(kindOfPrice == "priceIsNegotiable"  &&  d[i].price != -1){
+					return 0;
+				}
+				if(kindOfPrice == "priceIsFree"){
+					if (d[i].price != 0){
+						return 0;
+					}
+				}
+				if(kindOfPrice == "priceIsFixed"  &&  d[i].price <= 0){
+					return 0;
+				}
+				return 1;
+			}
+			
+			
+			function fromWhatPrice(i) {
+				if(!$("#price-from").val()) {
+					return 1;
+				}
+				
+				if ($("#price-from").val() > d[i].price){
+					return 0;
+				}
+				
+				return 1;
+			}
+			
+			function toWhatPrice(i) {
+				if(!$("#price-to").val()) {
+					return 1;
+				}
+				
+				if($("#price-to").val() < d[i].price){
+					return 0;
+				}
+					
+				return 1;
+			}
+			
+			function checkKindOfDeal(i) {
+				var chosenDeal = "input[name=kindOfDeal]:checked";
+				var deal = $(chosenDeal).val();
+				
+				if(deal != "all"  &&  deal != d[i].kindOfDeal) {
+					return 0;
+				}
+				
+				return 1;
+			}
+			
+			function checkHasPic(i) {
+				if($("#hasPicture").is(":checked")){
+					return d[i].hasPicture();
+				}
+				return 1;
+			}
+			
+			function checkIsUrgent(i) {
+				if($("#isUrgent").is(":checked")){
+					return d[i].isUrgent;
+				}
+				return 1;
+			}
+			
+			function showWanted(onPage, i) {
+				var device = "#de"
+				device += i;
+				
+				if (onPage == 0) {
+					$(device).fadeOut();
+				}
+				else if (onPage == 1){
+					$(device).fadeIn();
+				}
+				else {
+					alert("function showWanted WARNING: <STRONG>bad value for onPage!</STRONG>");
+				}
+			}
+			
+			function errorCheck(totalAvailables){
+				if (totalAvailables == 0){
+					$("#devices-section").fadeOut();
+					$("#no-device-found").fadeIn();
+				}
+				
+				else {
+					$("#no-device-found").fadeOut();
+					$("#devices-section").fadeIn();
+				}
+			}
+			
+			
+			
+			$('#btnToggle').click(function(){
+				if ($(this).hasClass('on')) {
+					$('#main .col-md-4').addClass('col-xs-4').removeClass('col-md-4');
+					$(this).removeClass('on');
+				} else {
+					$('#main .col-xs-4').removeClass('col-xs-4').addClass('col-md-4');
+					$(this).addClass('on');
+				}
+			});
+		</script>
+		
+	</body>
+
+</html>
